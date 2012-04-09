@@ -9,5 +9,8 @@ Easy to define factories for backbone.js models.
       name: "Vee"
     });
 
-    var person = Factory.build("Person", { name: "Veronika" });
-    person.get("name") === "Veronika" //true
+    var vee = Factory.build("Person");
+    vee.get("name") === "Vee" //true
+
+    var veronika = Factory.build("Person", { name: "Veronika" });
+    veronika.get("name") === "Veronika" //true
