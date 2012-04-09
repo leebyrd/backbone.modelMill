@@ -1,0 +1,1 @@
+Overrides Backbone.Collection.prototype.get to fetch and add if model is not in collection. 
