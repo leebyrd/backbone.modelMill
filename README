@@ -1,1 +1,1 @@
-Overrides Backbone.Collection.prototype.get to fetch and add if model is not in collection. 
+Easy to define factories for backbone.js models.
