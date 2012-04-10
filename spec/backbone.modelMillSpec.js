@@ -28,5 +28,25 @@ describe("backbone.modelMill", function() {
 
       expect(person.get('name')).toEqual('Veronika');
     });
+
+    describe("with a model defined", function() {
+      beforeEach(function() {
+        Factory.define('PersonWithNickname', {
+          model: "Person",
+          name: "Vee",
+          nickname: "Veeka"
+        });
+      });
+      it("build a model of the defined type", function() {
+        var person = Factory.build('PersonWithNickname');
+        expect(person instanceof Backbone.Model).toBeTruthy();
+        expect(person.get('nickname')).toEqual("Veeka");
+      });
+
+      it("removes the model from the attributes", function() {
+        var person = Factory.build('PersonWithNickname');
+        expect(person.get('model')).toBeUndefined();
+      });
+    });
   });
 });
